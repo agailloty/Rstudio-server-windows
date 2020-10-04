@@ -1,0 +1,61 @@
+---
+title: "Using Rstudio server on the Windows 10 subsystem for Linux"
+output: bookdown::gitbook
+---
+
+# Introduction
+
+Not so long ago I've started using intensively Linux. I really love the power of open source softwares. Linux may be intimidating when you start using it but when you understand how it works, your computer will no more have secrets for you.  
+
+Developping in Linux offered me the best ever experience I've had so far. I am not saying that Windows is bad but I just very comfortable using `bash` and easy is it to install any package just through a few command line with `apt` for Debian based Linux distributions.  
+
+One of the major advantages I've found so far using Linux over Windows is about networking and the ability to easily connect and using your computer resources remotely.  
+
+In reality today the majority of web and cloud servers are running Linux and that is not because Linux is free but because at its core Linux was designed to help computers communicate.  
+
+When I bought my computer, like the majority of the PCs yo would buy today, it was shipped with the latest Windows 10 OS. I am really happy with that operating system for my college courses. Most of the softwares including R, Python, Stata, SAS, Gretl all work really fine on Windows and so no need to look elsewhere.  
+
+But as I started to do web developement I've come to have little hard times with Windows. 
+I remember a web application I was developping using the [R Shiny framework](https://shiny.rstudio.com/). I can preview the functionalities I added to the application through my web browser when I run the application. I wanted to make it visible to the other members of the team but the only way to do so was through the [Shiny server](https://rstudio.com/products/shiny/shiny-server/) which only work on Linux OSs. 
+
+This leads me to install [Kubuntu]() as dual boot on another partition of my laptop. With that I could provide an IP address with a port to the rest of the team to use the application : logging in, updating the database. 
+
+Also as the final version of the application will be served on the server of the Institute I needed to manage few details on deployment, which I finally did using Linux.  
+
+## Goal of the tutorial 
+
+I am really excited to present this tutorial because the content I find is really mind blowing and it offers a serious compromise : combining both the power of Windows and Linux at the same on the same computer. 
+
+Here's the outline of what I will discuss :
+
+- How to install the Windows Subsystem for Linux (WSL 2) and enable it   
+- How to install a Linux distribution (Ubuntu for this tutorial, but you can install any distribution you're familiar with)   
+- How to install R and Rstudio Server on that Linux distribution  
+- How to use the Rstudio Server through your Windows running browser  
+- How to access Rstudio server on any computer (or tablets, smartphones) connected to your Local Area Network (LAN)   
+
+
+
+
+# Install WSL 2 and configure it on Windows 10   
+
+## Prerequisites  
+
+The only prerequisites of this part is to have a Windows 10 laptop running at least the 2004 version. **You don't need to have Windows 10 Professional**.  
+You can check that by typing `winver` in the Start menu.  
+
+![](/mnt/c/Users/"Axel-Cleris Gailloty"/bridge/win_version.PNG)   
+
+If you don't have the 2004 version you'll need to upgrade your Windows laptop because the WSL 2 only work on it.  
+
+You can do so with Windows Update : fetch the latest updates and upgrade your computer before you continue.  
+
+From now I will assume that you have the Windows 10 version 2004.  
+
+
+
+
+
+
+
+
