@@ -1,6 +1,7 @@
 ---
 title: "Using Rstudio server on the Windows 10 subsystem for Linux"
 output: bookdown::gitbook
+author: Axel-Cleris Gailloty
 ---
 
 # Introduction
@@ -71,6 +72,64 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 
 ```
 
+## Activate WSL 2 and the Virtual Platform via the Graphical User Interface  
+
+Alternatively to the Powershell approach where you execute the code above, you can activate both WSL 2 and the Virtual Platform using the Graphical User Interface provided by your Windows OS.  
+
+Open the start menu and type *"turn on windows features ...*. You'll be redirected to a screen similar to this : 
+
+![Enable Windows Features](img/enable_wsl_vm_platform.png)
+Select both Windows Subsystem for Linux & Virtual Machine Platform and click [OK] to validate.  
+It may require you to reboot your computer. Make sure you save all your opening works before rebooting your computer.   
+
+## Making WSL 2 default  
+
+Since WSL 2 is new, it may be the default on your computer. In fact you can still use WSL 1 alongside WSL 2. But is is recommanded to switch to WSL 2 for the lots of benefits enumerated on the [Comparing WSL 1 & WSL 2](https://docs.microsoft.com/en-us/windows/wsl/compare-versions) page.  
+
+To do so you just need to open Powershell and execute the following commands : 
+
+```{}
+wsl --set-default-version 2
+```
+
+Any ditributions you will install are going to use WSL 2 by default.  
+
+# Installing Ubuntu   
+
+You can install any distribution you like, but for this tutorial I'll stick with the latest Ubuntu 20.04.  
+
+R and R Studio server exist for all major distributions, even if your distribution doesn't have a package manager to install R and R Studio Server you can build them from source (I have never done it before but it exists).  
+
+
+## Download Ubuntu from the Windows Store   
+
+![Download Ubuntu](img/install_ubuntu.PNG) 
+
+This is quite straightforward : Windows Store provides a sample of major Linux distributions, some custom distributions may not be free for download but Ubuntu is free. Just click on *Install*. It will download the OS. When the installation finishes it will ask you to provide valid UNIX username and password. That's all you need. 
+
+
+### Case when you previously have a Linux distribution running WSL 1  
+
+Let's suppose this is not the first time you use WSL and you have a functional distributions you installed with WSL 1. it is possible to convert that distribution to WSL 2 using that commands : 
+
+**Close all the instances of that distribution before you proceed.**   
+
+```{}
+# First list the names of the installed distributions 
+wsl --list 
+
+# Pick the name of the distribution and execute 
+wsl --set-version <distribution name> 2
+```
+
+Replace `<distribution name>` with the name of your distribution. 
+
+
+# Installing R and Rstudio Server  
+
+From now you should have a Linux distribution running on WSL 2 on your Windows 10 laptop.  
+
+I will install the latest version of R and Rstudio Server for Ubuntu 20.04.  
 
 
 
